@@ -1,9 +1,9 @@
 package com.ksyun.media.streamer.demo;
 
-import com.ksyun.live.demo.R;
 import android.content.Intent;
-import android.util.Log;
 import android.view.Surface;
+
+import com.ksyun.live.demo.R;
 
 import butterknife.OnClick;
 

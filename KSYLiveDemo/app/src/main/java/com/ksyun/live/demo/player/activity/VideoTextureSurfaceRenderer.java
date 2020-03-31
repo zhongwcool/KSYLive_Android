@@ -8,7 +8,6 @@ import android.opengl.GLES20;
 import android.opengl.GLUtils;
 import android.util.Log;
 
-
 import com.ksyun.live.demo.R;
 import com.ksyun.live.demo.player.util.RawResourceReader;
 import com.ksyun.live.demo.player.util.ShaderHelper;
@@ -28,19 +27,19 @@ public class VideoTextureSurfaceRenderer extends TextureSurfaceRenderer implemen
      *
      */
     private static float squareSize = 1.0f;
-    private static float squareCoords[] = {
+    private static float[] squareCoords = {
             -squareSize,  squareSize,   // top left
             -squareSize, -squareSize,   // bottom left
             squareSize, -squareSize,    // bottom right
             squareSize,  squareSize }; // top right
 
-    private static short drawOrder[] = { 0, 1, 2, 0, 2, 3};
+    private static short[] drawOrder = {0, 1, 2, 0, 2, 3};
 
     private Context context;
 
     // Texture to be shown in backgrund
     private FloatBuffer textureBuffer;
-    private float textureCoords[] = {
+    private float[] textureCoords = {
             0.0f, 1.0f, 0.0f, 1.0f,
             0.0f, 0.0f, 0.0f, 1.0f,
             1.0f, 0.0f, 0.0f, 1.0f,

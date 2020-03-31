@@ -1,10 +1,10 @@
 package com.ksyun.media.streamer.demo;
 
+import android.util.Log;
+
 import com.ksyun.media.streamer.filter.imgtex.ImgTexBufFilter;
 import com.ksyun.media.streamer.framework.ImgBufFormat;
 import com.ksyun.media.streamer.util.gles.GLRender;
-
-import android.util.Log;
 
 import java.nio.ByteBuffer;
 

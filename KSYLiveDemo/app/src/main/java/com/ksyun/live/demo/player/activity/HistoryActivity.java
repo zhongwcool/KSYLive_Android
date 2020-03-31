@@ -38,7 +38,7 @@ public class HistoryActivity extends Activity {
         setContentView(R.layout.activity_history);
         listurl = new ArrayList<String>();
 
-        hislist = (ListView) findViewById(R.id.list_history);
+        hislist = findViewById(R.id.list_history);
         NetDb = new NetDbAdapter(HistoryActivity.this);
         NetDb.open();
         cursor = NetDb.getAllData();

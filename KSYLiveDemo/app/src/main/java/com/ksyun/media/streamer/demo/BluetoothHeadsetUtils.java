@@ -1,7 +1,5 @@
 package com.ksyun.media.streamer.demo;
 
-import java.util.List;
-
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothHeadset;
@@ -12,6 +10,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.media.AudioManager;
 import android.util.Log;
+
+import java.util.List;
 
 /**
  * This is a utility to detect bluetooth headset connection and establish audio connection.

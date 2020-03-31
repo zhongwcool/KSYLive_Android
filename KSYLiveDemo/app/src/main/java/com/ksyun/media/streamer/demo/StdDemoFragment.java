@@ -1,14 +1,15 @@
 package com.ksyun.media.streamer.demo;
 
-import com.ksyun.live.demo.R;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
 
+import androidx.annotation.Nullable;
+
+import com.ksyun.live.demo.R;
 import com.ksyun.media.streamer.encoder.VideoEncodeFormat;
 import com.ksyun.media.streamer.framework.AVConst;
 import com.ksyun.media.streamer.kit.StreamerConstants;

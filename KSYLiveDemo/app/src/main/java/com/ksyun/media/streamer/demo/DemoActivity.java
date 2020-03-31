@@ -1,6 +1,5 @@
 package com.ksyun.media.streamer.demo;
 
-import com.ksyun.live.demo.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import com.ksyun.live.demo.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,7 +32,7 @@ public class DemoActivity extends Activity {
         setContentView(R.layout.demo_activity);
         ButterKnife.bind(this);
 
-        Spinner demoTypeSpinner = (Spinner) findViewById(R.id.demo_type);
+        Spinner demoTypeSpinner = findViewById(R.id.demo_type);
         String[] items = new String[]{"基础Demo", "标准Demo", "悬浮窗Demo", "纯音频推流"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, items);

@@ -3,7 +3,6 @@ package com.ksyun.live.demo.player.activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.CompoundButton;
@@ -12,6 +11,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.ksyun.live.demo.R;
 import com.ksyun.live.demo.player.util.Settings;
@@ -56,16 +57,16 @@ public class SettingActivity extends AppCompatActivity implements RadioGroup.OnC
         String bufferSize = settings.getString("buffersize", "15");
 
 
-        mChooseCodec = (RadioGroup) findViewById(R.id.choose_codec);
-        mChooseType = (RadioGroup) findViewById(R.id.choose_type);
+        mChooseCodec = findViewById(R.id.choose_codec);
+        mChooseType = findViewById(R.id.choose_type);
 
         mChooseCodec.setOnCheckedChangeListener(this);
         mChooseType.setOnCheckedChangeListener(this);
 
-        debugSwitch = (Switch) findViewById(R.id.switch_set);
+        debugSwitch = findViewById(R.id.switch_set);
 
-        mBufferSize = (EditText) findViewById(R.id.bfsize_edit);
-        mBufferTime = (EditText) findViewById(R.id.bftime_edit);
+        mBufferSize = findViewById(R.id.bfsize_edit);
+        mBufferTime = findViewById(R.id.bftime_edit);
 
         mBufferSize.addTextChangedListener(new TextWatcher() {
             @Override
@@ -122,14 +123,14 @@ public class SettingActivity extends AppCompatActivity implements RadioGroup.OnC
 
 
     private void initSetting(String chooseDecode, String chooseDebug, String bufferSize, String bufferTime, String chooseType) {
-        radioSoft = (RadioButton) findViewById(R.id.use_sw);
-        radioHard = (RadioButton) findViewById(R.id.use_hw);
+        radioSoft = findViewById(R.id.use_sw);
+        radioHard = findViewById(R.id.use_hw);
 
-        radioLive = (RadioButton) findViewById(R.id.type_live);
-        radioVod = (RadioButton) findViewById(R.id.type_vod);
-        radioFloating = (RadioButton) findViewById(R.id.type_floating);
-        radioRecord = (RadioButton) findViewById(R.id.type_record);
-        radioMultiplePlayer = (RadioButton) findViewById(R.id.type_multiple_player);
+        radioLive = findViewById(R.id.type_live);
+        radioVod = findViewById(R.id.type_vod);
+        radioFloating = findViewById(R.id.type_floating);
+        radioRecord = findViewById(R.id.type_record);
+        radioMultiplePlayer = findViewById(R.id.type_multiple_player);
         mBufferSize.setText(bufferSize);
         mBufferTime.setText(bufferTime);
 

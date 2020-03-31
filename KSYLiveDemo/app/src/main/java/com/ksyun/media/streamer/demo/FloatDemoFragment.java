@@ -1,6 +1,5 @@
 package com.ksyun.media.streamer.demo;
 
-import com.ksyun.live.demo.R;
 /**
  * Float streaming demo fragment.
  */

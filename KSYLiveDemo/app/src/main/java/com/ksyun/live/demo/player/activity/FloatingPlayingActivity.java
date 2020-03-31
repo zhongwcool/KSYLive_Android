@@ -2,18 +2,18 @@ package com.ksyun.live.demo.player.activity;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.ksyun.live.demo.R;
 import com.ksyun.live.demo.player.view.KSYFloatingWindowView;
@@ -43,7 +43,7 @@ public class FloatingPlayingActivity extends Activity implements Handler.Callbac
 
         setContentView(R.layout.activity_floating_playing);
 
-        mFloatingLeave = (ImageView) findViewById(R.id.floating_playing_back);
+        mFloatingLeave = findViewById(R.id.floating_playing_back);
         mFloatingLeave.setOnClickListener(mOnClickListener);
 
         mHandler = new Handler(getMainLooper(), this);

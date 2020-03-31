@@ -23,14 +23,13 @@
             android:textColor="@color/font_color_35"
             android:textSize="16sp"/>
 
-        <android.support.v7.widget.AppCompatSpinner
+        <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/beauty_spin"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:layout_marginLeft="28dp"
             android:text="none"
-            android:textSize="14sp">
-        </android.support.v7.widget.AppCompatSpinner>
+            android:textSize="14sp"></androidx.appcompat.widget.AppCompatSpinner>
     </LinearLayout>
 
     <LinearLayout
@@ -51,7 +50,7 @@
             android:textColor="@color/font_color_35"
             android:textSize="14sp"/>
 
-        <android.support.v7.widget.AppCompatSeekBar
+        <androidx.appcompat.widget.AppCompatSeekBar
             android:id="@+id/grind_seek_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -75,7 +74,7 @@
             android:textColor="@color/font_color_35"
             android:textSize="14sp"/>
 
-        <android.support.v7.widget.AppCompatSeekBar
+        <androidx.appcompat.widget.AppCompatSeekBar
             android:id="@+id/whiten_seek_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -100,7 +99,7 @@
             android:textColor="@color/font_color_35"
             android:textSize="14sp"/>
 
-        <android.support.v7.widget.AppCompatSeekBar
+        <androidx.appcompat.widget.AppCompatSeekBar
             android:id="@+id/ruddy_seek_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

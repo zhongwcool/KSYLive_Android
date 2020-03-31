@@ -9,15 +9,16 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.ksyun.live.demo.R;
 
@@ -76,11 +77,11 @@ public class PlayerActivity extends AppCompatActivity implements View.OnClickLis
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View v = inflator.inflate(layoutId, new LinearLayout(mContext), false);
             ActionBar.LayoutParams layout = new ActionBar.LayoutParams(
-                    android.support.v7.app.ActionBar.LayoutParams.MATCH_PARENT, android.support.v7.app.ActionBar.LayoutParams.MATCH_PARENT);
+                    androidx.appcompat.app.ActionBar.LayoutParams.MATCH_PARENT, androidx.appcompat.app.ActionBar.LayoutParams.MATCH_PARENT);
             actionBar.setCustomView(v, layout);
-            mediaNet = (Button) findViewById(R.id.media_network);
-            mediaHistory = (Button) findViewById(R.id.media_history);
-            mediaSetting = (Button) findViewById(R.id.media_setting);
+            mediaNet = findViewById(R.id.media_network);
+            mediaHistory = findViewById(R.id.media_history);
+            mediaSetting = findViewById(R.id.media_setting);
             mediaNet.setOnClickListener(this);
             mediaSetting.setOnClickListener(this);
             mediaHistory.setOnClickListener(this);

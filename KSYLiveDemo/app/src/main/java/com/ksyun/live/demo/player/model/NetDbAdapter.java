@@ -5,9 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
-import android.graphics.Path;
-
-import com.ksyun.live.demo.player.model.NetbaseHelper;
 
 import java.util.Calendar;
 
@@ -55,26 +52,21 @@ public class NetDbAdapter {
                 + calendar.get(Calendar.SECOND);
         content.put(KEY_CREATED, created);
 
-        return sqliteDatabase.insert(databaseHelper.DATABSE_TABLE, null, content);
+        return sqliteDatabase.insert(NetbaseHelper.DATABSE_TABLE, null, content);
     }
 
     public Cursor getAllData()
     {
         String[] searchResult =  {KEY_ROWID,KEY_PATH, KEY_CREATED};
-        return sqliteDatabase.query(databaseHelper.DATABSE_TABLE,searchResult,null,null,null,null,KEY_CREATED + " DESC");
+        return sqliteDatabase.query(NetbaseHelper.DATABSE_TABLE, searchResult, null, null, null, null, KEY_CREATED + " DESC");
     }
 
     public boolean getData(String path){
         String[] searchResult =  {KEY_ROWID, KEY_CREATED,KEY_PATH};
         String whereString = KEY_PATH + "=" + "'"+ path + "'";
 
-        Cursor mCursor = sqliteDatabase.query(true, databaseHelper.DATABSE_TABLE, searchResult, whereString, null, null, null, null, null);
-        if(mCursor.getCount()>0){
-            return true;
-        }else{
-            return false;
-
-        }
+        Cursor mCursor = sqliteDatabase.query(true, NetbaseHelper.DATABSE_TABLE, searchResult, whereString, null, null, null, null, null);
+        return mCursor.getCount() > 0;
     }
 
     public boolean updateData(String path){
@@ -92,7 +84,7 @@ public class NetDbAdapter {
         content.put(KEY_CREATED, created);
         String whereString = KEY_PATH + "=" + "'"+ path + "'";
 
-        return sqliteDatabase.update(databaseHelper.DATABSE_TABLE, content, whereString, null)>0;
+        return sqliteDatabase.update(NetbaseHelper.DATABSE_TABLE, content, whereString, null) > 0;
     }
 
 

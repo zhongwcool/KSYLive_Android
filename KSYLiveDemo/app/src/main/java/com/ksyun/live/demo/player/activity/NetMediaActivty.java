@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +15,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.ksyun.live.demo.R;
 import com.ksyun.live.demo.player.model.NetDbAdapter;
@@ -46,9 +47,9 @@ public class NetMediaActivty extends AppCompatActivity implements View.OnClickLi
 
         setContentView(R.layout.activity_net);
 
-        textUrl = (EditText) findViewById(R.id.search_net);
-        netStartVideo = (Button) findViewById(R.id.btn_net_vedio);
-        netList = (ListView) findViewById(R.id.list_net);
+        textUrl = findViewById(R.id.search_net);
+        netStartVideo = findViewById(R.id.btn_net_vedio);
+        netList = findViewById(R.id.list_net);
 
         final String[] sampleUrl = {"rtmp://live.hkstv.hk.lxdns.com/live/hks",
                 "http://playback.ks.zb.mi.com/record/live/107578_1467605748/hls/107578_1467605748.m3u8",
@@ -116,12 +117,12 @@ public class NetMediaActivty extends AppCompatActivity implements View.OnClickLi
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View v = inflator.inflate(layoutId, new LinearLayout(mContext), false);
             ActionBar.LayoutParams layout = new ActionBar.LayoutParams(
-                    android.support.v7.app.ActionBar.LayoutParams.MATCH_PARENT, android.support.v7.app.ActionBar.LayoutParams.MATCH_PARENT);
+                    androidx.appcompat.app.ActionBar.LayoutParams.MATCH_PARENT, androidx.appcompat.app.ActionBar.LayoutParams.MATCH_PARENT);
             actionBar.setCustomView(v, layout);
 
-            netHistory = (Button) findViewById(R.id.net_history);
-            netScan = (Button) findViewById(R.id.net_scan);
-            netSetting = (Button) findViewById(R.id.net_setting);
+            netHistory = findViewById(R.id.net_history);
+            netScan = findViewById(R.id.net_scan);
+            netSetting = findViewById(R.id.net_setting);
             netScan.setOnClickListener(this);
             netHistory.setOnClickListener(this);
             netSetting.setOnClickListener(this);

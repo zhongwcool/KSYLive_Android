@@ -3,7 +3,6 @@ package com.ksyun.live.demo.player.record;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
 import android.util.Log;
 
 import com.ksyun.media.streamer.encoder.AVCodecAudioEncoder;
@@ -21,8 +20,6 @@ import com.ksyun.media.streamer.kit.StreamerConstants;
 import com.ksyun.media.streamer.logstats.StatsLogReport;
 import com.ksyun.media.streamer.publisher.FilePublisher;
 import com.ksyun.media.streamer.publisher.Publisher;
-import com.ksyun.media.streamer.publisher.PublisherMgt;
-import com.ksyun.media.streamer.util.gles.GLRender;
 
 /**
  * Created by liubohua on 2017/2/20.

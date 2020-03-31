@@ -1,6 +1,5 @@
 package com.ksyun.media.streamer.demo;
 
-import com.ksyun.live.demo.R;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Application;
@@ -14,7 +13,6 @@ import android.opengl.GLSurfaceView;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -28,6 +26,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+
+import com.ksyun.live.demo.R;
 import com.ksyun.media.streamer.kit.KSYStreamer;
 
 

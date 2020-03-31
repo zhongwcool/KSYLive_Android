@@ -1,13 +1,14 @@
 package com.ksyun.media.streamer.demo.sticker.window;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
 import com.ksyun.live.demo.R;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
@@ -56,7 +57,7 @@ public class StickerAdapter extends RecyclerView.Adapter<ViewHolder> {
 
         public ImageHolder(View itemView) {
             super(itemView);
-            this.image = (ImageView) itemView.findViewById(R.id.sticker_img);
+            this.image = itemView.findViewById(R.id.sticker_img);
         }
     }
 

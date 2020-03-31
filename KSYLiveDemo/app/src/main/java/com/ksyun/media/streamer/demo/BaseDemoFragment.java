@@ -1,9 +1,7 @@
 package com.ksyun.media.streamer.demo;
 
-import com.ksyun.live.demo.R;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +11,9 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
+import androidx.annotation.Nullable;
+
+import com.ksyun.live.demo.R;
 import com.ksyun.media.streamer.capture.CameraCapture;
 import com.ksyun.media.streamer.kit.StreamerConstants;
 import com.ksyun.media.streamer.util.device.DeviceInfo;

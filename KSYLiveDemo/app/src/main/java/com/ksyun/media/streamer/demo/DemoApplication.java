@@ -1,9 +1,9 @@
 package com.ksyun.media.streamer.demo;
 
+import android.app.Application;
+
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.ksyun.media.streamer.util.device.DeviceInfoTools;
-
-import android.app.Application;
 
 /**
  * demo for deviceTools

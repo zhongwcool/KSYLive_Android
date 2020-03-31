@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +13,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.ksyun.live.demo.R;
 import com.ksyun.live.demo.player.model.GetList;
@@ -88,9 +89,9 @@ public class LocalFragment extends android.app.Fragment implements SwipeRefreshL
 
         View view = inflater.inflate(R.layout.fragment_local, container, false);
 
-        swipeLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_container);
-        listView = (ListView) view.findViewById(R.id.list_local_frag);
-        localPath = (TextView) view.findViewById(R.id.local_path);
+        swipeLayout = view.findViewById(R.id.swipe_container);
+        listView = view.findViewById(R.id.list_local_frag);
+        localPath = view.findViewById(R.id.local_path);
         swipeLayout.setOnRefreshListener(this);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

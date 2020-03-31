@@ -22,7 +22,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ksyun.live.demo.R;
-import com.ksyun.live.demo.player.record.KSYPlayerRecord;
 import com.ksyun.live.demo.player.model.NetState;
 import com.ksyun.live.demo.player.model.Strings;
 import com.ksyun.live.demo.player.util.NetStateUtil;
@@ -36,13 +35,11 @@ import com.ksyun.media.player.KSYMediaMeta;
 import com.ksyun.media.player.KSYMediaPlayer;
 import com.ksyun.media.player.KSYTextureView;
 import com.ksyun.media.player.misc.KSYQosInfo;
-import com.ksyun.media.streamer.kit.StreamerConstants;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.ByteBuffer;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Timer;
@@ -135,8 +132,13 @@ public class TextureVideoActivity extends Activity implements View.OnClickListen
             mVideoWidth = mVideoView.getVideoWidth();
             mVideoHeight = mVideoView.getVideoHeight();
 
-            // Set Video Scaling Mode
-            mVideoView.setVideoScalingMode(KSYMediaPlayer.VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING);
+            if (mVideoWidth > mVideoHeight) {
+                // Set Video Scaling Mode
+                mVideoView.setVideoScalingMode(KSYMediaPlayer.VIDEO_SCALING_MODE_SCALE_TO_FIT);
+            } else {
+                // Set Video Scaling Mode
+                mVideoView.setVideoScalingMode(KSYMediaPlayer.VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING);
+            }
 
             //start player
             mVideoView.start();
@@ -327,40 +329,40 @@ public class TextureVideoActivity extends Activity implements View.OnClickListen
 
         setContentView(R.layout.texture_player);
 
-        mPlayerPanel = (RelativeLayout) findViewById(R.id.player_panel);
-        mPlayerStartBtn = (ImageView) findViewById(R.id.player_start);
-        mPlayerVolume = (ImageView) findViewById(R.id.player_volume);
-        mLoadText = (TextView) findViewById(R.id.loading_text);
-        mCpu = (TextView) findViewById(R.id.player_cpu);
-        mMemInfo = (TextView) findViewById(R.id.player_mem);
-        mVideoResolution = (TextView) findViewById(R.id.player_re);
-        mVideoBitrate = (TextView) findViewById(R.id.player_br);
-        mVideoBufferTime = (TextView) findViewById(R.id.player_video_time);
-        mAudioBufferTime = (TextView) findViewById(R.id.player_audio_time);
-        mServerIp = (TextView) findViewById(R.id.player_ip);
-        mSdkVersion = (TextView) findViewById(R.id.player_sdk_version);
-        mDNSTime = (TextView) findViewById(R.id.player_dns_time);
-        mHttpConnectionTime = (TextView) findViewById(R.id.player_http_connection_time);
-        mBufferEmptyCnt = (TextView) findViewById(R.id.player_buffer_empty_count);
-        mBufferEmptyDuration = (TextView) findViewById(R.id.player_buffer_empty_duration);
-        mDecodeFps = (TextView) findViewById(R.id.player_decode_fps);
-        mOutputFps = (TextView) findViewById(R.id.player_output_fps);
+        mPlayerPanel = findViewById(R.id.player_panel);
+        mPlayerStartBtn = findViewById(R.id.player_start);
+        mPlayerVolume = findViewById(R.id.player_volume);
+        mLoadText = findViewById(R.id.loading_text);
+        mCpu = findViewById(R.id.player_cpu);
+        mMemInfo = findViewById(R.id.player_mem);
+        mVideoResolution = findViewById(R.id.player_re);
+        mVideoBitrate = findViewById(R.id.player_br);
+        mVideoBufferTime = findViewById(R.id.player_video_time);
+        mAudioBufferTime = findViewById(R.id.player_audio_time);
+        mServerIp = findViewById(R.id.player_ip);
+        mSdkVersion = findViewById(R.id.player_sdk_version);
+        mDNSTime = findViewById(R.id.player_dns_time);
+        mHttpConnectionTime = findViewById(R.id.player_http_connection_time);
+        mBufferEmptyCnt = findViewById(R.id.player_buffer_empty_count);
+        mBufferEmptyDuration = findViewById(R.id.player_buffer_empty_duration);
+        mDecodeFps = findViewById(R.id.player_decode_fps);
+        mOutputFps = findViewById(R.id.player_output_fps);
 
-        topPanel = (RelativeLayout) findViewById(R.id.rightPanel_player);
-        mPlayerReload = (ImageView) findViewById(R.id.player_reload);
-        mPlayerRotate = (ImageView) findViewById(R.id.player_rotate);
-        mPlayerScreen = (ImageView) findViewById(R.id.player_screen);
-        mPlayerScale = (ImageView) findViewById(R.id.player_scale);
-        mute = (Button) findViewById(R.id.btn_mute_player);
-        mirror = (ImageView) findViewById(R.id.player_mirror);
+        topPanel = findViewById(R.id.rightPanel_player);
+        mPlayerReload = findViewById(R.id.player_reload);
+        mPlayerRotate = findViewById(R.id.player_rotate);
+        mPlayerScreen = findViewById(R.id.player_screen);
+        mPlayerScale = findViewById(R.id.player_scale);
+        mute = findViewById(R.id.btn_mute_player);
+        mirror = findViewById(R.id.player_mirror);
         mirror.setOnClickListener(this);
         mPlayerReload.setOnClickListener(this);
         mPlayerRotate.setOnClickListener(this);
         mPlayerScreen.setOnClickListener(this);
         mPlayerScale.setOnClickListener(mVideoScaleButton);
 
-        mAudioSeekbar = (VerticalSeekBar) findViewById(R.id.player_audio_seekbar);
-        mProgressTextView = (ProgressTextView) findViewById(R.id.ptv_open_percentage);
+        mAudioSeekbar = findViewById(R.id.player_audio_seekbar);
+        mProgressTextView = findViewById(R.id.ptv_open_percentage);
         mAudioSeekbar.setProgress(100);
         mAudioSeekbar.setOnSeekBarChangeListener(audioSeekbarListener);
 
@@ -368,7 +370,7 @@ public class TextureVideoActivity extends Activity implements View.OnClickListen
         mPlayerStartBtn.setOnClickListener(mStartBtnListener);
         mPlayerVolume.setOnClickListener(this);
 
-        mVideoView = (KSYTextureView) findViewById(R.id.texture_view);
+        mVideoView = findViewById(R.id.texture_view);
         mVideoView.setKeepScreenOn(true);
         this.setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
@@ -447,11 +449,7 @@ public class TextureVideoActivity extends Activity implements View.OnClickListen
             Log.e(TAG, "palyer buffersize :" + bufferSize);
         }
 
-        if (chooseDecode.equals(Settings.USEHARD)) {
-            useHwCodec = true;
-        } else {
-            useHwCodec = false;
-        }
+        useHwCodec = chooseDecode.equals(Settings.USEHARD);
 
         if (useHwCodec) {
             //硬解264&265

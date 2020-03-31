@@ -2,11 +2,12 @@ package com.ksyun.live.demo.player.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 import com.ksyun.live.demo.R;
 import com.ksyun.media.player.IMediaPlayer;
@@ -36,11 +37,11 @@ public class MultiplePlayerActivity extends Activity {
 
         setContentView(R.layout.activity_multiple_player);
 
-        mMasterSurfaceView = (SurfaceView) findViewById(R.id.player_master);
-        mSlaveSurfaceView = (SurfaceView) findViewById(R.id.player_slave);
-        mSlaveSurfaceView2 = (SurfaceView) findViewById(R.id.player_slave2);
-        mMaster = (TextView) findViewById(R.id.control_master);
-        mSlave = (TextView) findViewById(R.id.control_slave);
+        mMasterSurfaceView = findViewById(R.id.player_master);
+        mSlaveSurfaceView = findViewById(R.id.player_slave);
+        mSlaveSurfaceView2 = findViewById(R.id.player_slave2);
+        mMaster = findViewById(R.id.control_master);
+        mSlave = findViewById(R.id.control_slave);
         mDataSource = getIntent().getStringExtra("path");
         initPlayers();
         initViews();

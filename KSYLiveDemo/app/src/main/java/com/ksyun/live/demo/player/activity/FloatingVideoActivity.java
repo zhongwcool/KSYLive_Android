@@ -8,7 +8,6 @@ import android.graphics.SurfaceTexture;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -20,6 +19,8 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+
 import com.ksyun.live.demo.R;
 import com.ksyun.live.demo.player.model.KSYFloatingPlayer;
 import com.ksyun.live.demo.player.model.Strings;
@@ -30,7 +31,6 @@ import com.ksyun.media.player.IMediaPlayer;
 import com.ksyun.media.player.KSYMediaMeta;
 import com.ksyun.media.player.KSYMediaPlayer;
 import com.ksyun.media.player.misc.KSYQosInfo;
-
 
 import java.io.IOException;
 
@@ -360,29 +360,29 @@ public class FloatingVideoActivity extends Activity implements Handler.Callback 
 
         setContentView(R.layout.activity_floating);
 
-        mQosLayout = (RelativeLayout) findViewById(R.id.player_qos);
-        mPlayerPanel = (RelativeLayout) findViewById(R.id.player_panel);
-        mTextureView = (TextureView) findViewById(R.id.player_view);
+        mQosLayout = findViewById(R.id.player_qos);
+        mPlayerPanel = findViewById(R.id.player_panel);
+        mTextureView = findViewById(R.id.player_view);
         mTextureView.setSurfaceTextureListener(mSurfaceTextureListener);
-        mPlayerStartBtn = (ImageView) findViewById(R.id.player_start);
-        mFloatingPlaying = (ImageView) findViewById(R.id.floating_playing);
-        mPlayerSeekBar = (SeekBar) findViewById(R.id.player_seekbar);
-        mPlayerPosition = (TextView) findViewById(R.id.player_time);
-        mLoadText = (TextView) findViewById(R.id.loading_text);
-        mCpu = (TextView) findViewById(R.id.player_cpu);
-        mMemInfo = (TextView) findViewById(R.id.player_mem);
-        mVideoResolution = (TextView) findViewById(R.id.player_re);
-        mVideoBitrate = (TextView) findViewById(R.id.player_br);
-        mVideoBufferTime = (TextView) findViewById(R.id.player_video_time);
-        mAudioBufferTime = (TextView) findViewById(R.id.player_audio_time);
-        mServerIp = (TextView) findViewById(R.id.player_ip);
-        mSdkVersion = (TextView) findViewById(R.id.player_sdk_version);
-        mDNSTime = (TextView) findViewById(R.id.player_dns_time);
-        mHttpConnectionTime = (TextView) findViewById(R.id.player_http_connection_time);
-        mBufferEmptyCnt = (TextView) findViewById(R.id.player_buffer_empty_count);
-        mBufferEmptyDuration = (TextView) findViewById(R.id.player_buffer_empty_duration);
-        mDecodeFps = (TextView) findViewById(R.id.player_decode_fps);
-        mOutputFps = (TextView) findViewById(R.id.player_output_fps);
+        mPlayerStartBtn = findViewById(R.id.player_start);
+        mFloatingPlaying = findViewById(R.id.floating_playing);
+        mPlayerSeekBar = findViewById(R.id.player_seekbar);
+        mPlayerPosition = findViewById(R.id.player_time);
+        mLoadText = findViewById(R.id.loading_text);
+        mCpu = findViewById(R.id.player_cpu);
+        mMemInfo = findViewById(R.id.player_mem);
+        mVideoResolution = findViewById(R.id.player_re);
+        mVideoBitrate = findViewById(R.id.player_br);
+        mVideoBufferTime = findViewById(R.id.player_video_time);
+        mAudioBufferTime = findViewById(R.id.player_audio_time);
+        mServerIp = findViewById(R.id.player_ip);
+        mSdkVersion = findViewById(R.id.player_sdk_version);
+        mDNSTime = findViewById(R.id.player_dns_time);
+        mHttpConnectionTime = findViewById(R.id.player_http_connection_time);
+        mBufferEmptyCnt = findViewById(R.id.player_buffer_empty_count);
+        mBufferEmptyDuration = findViewById(R.id.player_buffer_empty_duration);
+        mDecodeFps = findViewById(R.id.player_decode_fps);
+        mOutputFps = findViewById(R.id.player_output_fps);
 
         mTextureView.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -422,11 +422,7 @@ public class FloatingVideoActivity extends Activity implements Handler.Callback 
             KSYFloatingPlayer.getInstance().getKSYMediaPlayer().setBufferSize(Integer.parseInt(bufferSize));
         }
 
-        if (chooseDecode.equals(Settings.USEHARD)) {
-            useHwDecoder = true;
-        } else {
-            useHwDecoder = false;
-        }
+        useHwDecoder = chooseDecode.equals(Settings.USEHARD);
 
         if (!chooseDebug.isEmpty() && chooseDebug.equals(Settings.DEBUGON)) {
             mQosLayout.setVisibility(View.VISIBLE);

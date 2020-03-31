@@ -33,7 +33,7 @@ public class TextureViewMediaActivity extends Activity implements TextureView.Su
 
         videoPath = getIntent().getStringExtra("path");
 
-        textureView = (TextureView) findViewById(R.id.id_textureview);
+        textureView = findViewById(R.id.id_textureview);
         textureView.setSurfaceTextureListener(this);
 
     }

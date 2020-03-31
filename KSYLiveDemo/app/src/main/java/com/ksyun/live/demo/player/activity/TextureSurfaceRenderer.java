@@ -62,7 +62,7 @@ public abstract class TextureSurfaceRenderer implements Runnable {
         //获取显示设备
         eglDisplay = egl.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
         //version中存放EGL 版本号，int[0]为主版本号，int[1]为子版本号
-        int version[] = new int[2];
+        int[] version = new int[2];
         egl.eglInitialize(eglDisplay, version);
 
         EGLConfig eglConfig = chooseEglConfig();

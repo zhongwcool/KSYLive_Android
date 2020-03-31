@@ -1,15 +1,16 @@
 package com.ksyun.media.streamer.demo;
 
-import com.ksyun.live.demo.R;
 import android.app.Fragment;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 
+import androidx.annotation.Nullable;
+
+import com.ksyun.live.demo.R;
 import com.ksyun.media.streamer.capture.ViewCapture;
 import com.ksyun.media.streamer.kit.KSYStreamer;
 import com.lht.paintview.PaintView;

@@ -6,17 +6,15 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.FrameLayout;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.ksyun.live.demo.R;
 import com.ksyun.media.streamer.capture.WaterMarkCapture;
@@ -78,7 +76,7 @@ public class StickerWindow extends FrameLayout {
 
     private View loadView() {
         View view = View.inflate(mContext, R.layout.sticker_window, null);
-        mStickerList = (RecyclerView) view.findViewById(R.id.stickers_list);
+        mStickerList = view.findViewById(R.id.stickers_list);
         mKSYStickerView = view.findViewById(R.id.sticker_view);
         mStickerRoot = view.findViewById(R.id.sticker_choose);
         mStickerRoot.setVisibility(GONE);

@@ -1,10 +1,8 @@
 package com.ksyun.media.streamer.demo;
 
-import com.ksyun.live.demo.R;
 import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -18,6 +16,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+
+import com.ksyun.live.demo.R;
 import com.ksyun.media.streamer.filter.imgtex.ImgBeautyDenoiseFilter;
 import com.ksyun.media.streamer.filter.imgtex.ImgBeautyIllusionFilter;
 import com.ksyun.media.streamer.filter.imgtex.ImgBeautyProFilter;
@@ -37,17 +38,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import jp.co.cyberagent.android.gpuimage.GPUImageEmbossFilter;
-import jp.co.cyberagent.android.gpuimage.GPUImageFilter;
 import jp.co.cyberagent.android.gpuimage.GPUImageGaussianBlurFilter;
 import jp.co.cyberagent.android.gpuimage.GPUImageGlassSphereFilter;
-import jp.co.cyberagent.android.gpuimage.GPUImageSepiaFilter;
 import jp.co.cyberagent.android.gpuimage.GPUImageSmoothToonFilter;
 import jp.co.cyberagent.android.gpuimage.GPUImageThresholdEdgeDetection;
-import jp.co.cyberagent.android.gpuimage.GPUImageToneCurveFilter;
-import jp.co.cyberagent.android.gpuimage.GPUImageToonFilter;
-import jp.co.cyberagent.android.gpuimage.GPUImageVignetteFilter;
-import jp.co.cyberagent.android.gpuimage.GPUImageWeakPixelInclusionFilter;
-import jp.co.cyberagent.android.gpuimage.GPUImageWhiteBalanceFilter;
 
 /**
  * Video filter choose fragment.

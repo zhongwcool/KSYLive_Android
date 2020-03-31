@@ -54,9 +54,9 @@ public class JieVideoListViewAdapter extends BaseAdapter {
         if (view == null) {
             holder = new ViewHolder();
             view = mLayoutInflater.inflate(R.layout.list_local, null);
-            holder.img = (ImageView)view.findViewById(R.id.img_list_local);
-            holder.title = (TextView)view.findViewById(R.id.tittle_list_local);
-            holder.path = (TextView)view.findViewById(R.id.content_list_local);
+            holder.img = view.findViewById(R.id.img_list_local);
+            holder.title = view.findViewById(R.id.tittle_list_local);
+            holder.path = view.findViewById(R.id.content_list_local);
             view.setTag(holder);
         }else {
             holder = (ViewHolder)view.getTag();

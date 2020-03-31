@@ -4,8 +4,6 @@ import android.content.Context;
 
 import com.ksyun.media.player.IMediaPlayer;
 import com.ksyun.media.player.KSYMediaPlayer;
-import com.ksyun.media.player.KSYTextureView;
-import com.ksyun.media.streamer.encoder.ColorFormatConvert;
 import com.ksyun.media.streamer.framework.AudioBufFormat;
 import com.ksyun.media.streamer.framework.AudioBufFrame;
 import com.ksyun.media.streamer.framework.ImgBufFormat;

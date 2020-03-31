@@ -32,7 +32,7 @@ public class GetList {
                     @Override
                     public boolean accept(File file) {
                         // sdCard找到视频名称
-                        String name = new String(file.getName());
+                        String name = file.getName();
 
                         int i = name.lastIndexOf('.');
                         if (i != -1) {

@@ -1,7 +1,5 @@
 package com.ksyun.live.demo.player.util;
 
-import com.ksyun.live.demo.player.util.LoadedImage;
-
 import java.io.Serializable;
 
 /**

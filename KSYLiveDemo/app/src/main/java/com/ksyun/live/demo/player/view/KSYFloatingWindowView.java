@@ -68,8 +68,8 @@ public class KSYFloatingWindowView extends RelativeLayout {
         mWindowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         LayoutInflater.from(context).inflate(R.layout.floating_window, this);
 
-        mTextureView = (TextureView) findViewById(R.id.floating_window_player_view);
-        mQuit = (ImageView) findViewById(R.id.floating_window_quit);
+        mTextureView = findViewById(R.id.floating_window_player_view);
+        mQuit = findViewById(R.id.floating_window_quit);
 
         mTextureView.setSurfaceTextureListener(mSurfaceTextureListener);
         mQuit.setOnClickListener(mOnClickListener);

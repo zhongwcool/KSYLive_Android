@@ -1,17 +1,17 @@
 package com.ksyun.media.streamer.demo;
 
-import com.ksyun.live.demo.R;
 import android.app.Fragment;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+
+import com.ksyun.live.demo.R;
 import com.ksyun.media.streamer.demo.sticker.window.StickerWindow;
-import com.ksyun.media.streamer.kit.KSYStreamer;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

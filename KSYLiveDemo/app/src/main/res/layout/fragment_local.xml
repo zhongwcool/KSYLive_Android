@@ -10,7 +10,7 @@
             android:textColor="@color/player_blue2"
             android:layout_margin="12dp"/>
 
-        <android.support.v4.widget.SwipeRefreshLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipe_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -21,6 +21,6 @@
 
                 </ListView>
 
-        </android.support.v4.widget.SwipeRefreshLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </LinearLayout>
